@@ -39,9 +39,21 @@ div {
 				<th><%=task.getName()%></th>
 				<th><%=task.getDescription()%></th>
 				<th><%=task.getCreatedTime()%></th>
-				<th><%=task.isStatus()%></th>
-				<td><button>Delete</button></td>
-				<td><button>Edit</button></td>
+		<th>	<%
+					if (task.isStatus()) 
+					{
+					%> Completed <%
+					}
+					else {
+					%>
+					<%-- Url rewriting for carrying primary key --%>
+					<a href="change-status?id=<%=task.getId()%>"><button>Complete</button></a> <%
+ }
+ %>
+				</th>
+				
+				<th><a href="delete?id=<%=task.getId()%>"><button>Delete</button></a></th>
+				<th><button>Edit</button></th>
 			</tr>
 			<%} }%>
 		</table>

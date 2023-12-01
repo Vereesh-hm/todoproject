@@ -25,6 +25,7 @@ public class UserDto {
 	String gender;
 	int age;
 	
+	
 	public int getId() {
 		return id;
 	}
